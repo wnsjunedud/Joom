@@ -14,14 +14,12 @@ app.get("/*", (_, res) => res.redirect("/"));
 const httpServer = http.createServer(app);
 const wsServer = SocketIO(httpServer);
 
-const handleListen = () => console.log(`Listening on http://localhost:3000`);
-
 wsServer.on("connection", (socket) => {
-  socket.on("enter_room", (msg, done) => {
-    console.log(msg);
+  socket.on("enter_room", (roomName, done) => {
+    console.log(roomName);
     setTimeout(() => {
-      done();
-    }, 10000);
+      done("hello from the backend");
+    }, 15000);
   });
 });
 
@@ -56,4 +54,5 @@ wss.on("connection", (socket) => {
   });
 }); */
 
+const handleListen = () => console.log(`Listening on http://localhost:3000`);
 httpServer.listen(3000, handleListen);
