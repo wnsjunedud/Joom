@@ -57,8 +57,8 @@ async function getMedia(deviceId) {
 
 function handleMuteClick() {
   myStream
-  .getAudioTracks()
-  .forEach((track) => (track.enabled = !track.enabled));
+    .getAudioTracks()
+    .forEach((track) => (track.enabled = !track.enabled));
   if (!muted) {
     muteBtn.innerText = "Unmute";
     muted = true;
@@ -67,10 +67,10 @@ function handleMuteClick() {
     muted = false;
   }
 }
-
 function handleCameraClick() {
-  myStream.getVideoTracks()
-  .forEach((track) => (track.enabled = !track.enabled));
+  myStream
+    .getVideoTracks()
+    .forEach((track) => (track.enabled = !track.enabled));
   if (cameraOff) {
     cameraBtn.innerText = "Turn Camera Off";
     cameraOff = false;
@@ -138,7 +138,6 @@ socket.on("ice", (ice) => {
   console.log("received candidate");
   myPeerConnection.addIceCandidate(ice);
 });
-
 
 // RTC Code
 
