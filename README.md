@@ -15,6 +15,12 @@ Zoom allows video and audio control after participating in the chat through the 
 
 ## Features
 
+- Creating Chat Rooms with Websockets
+- Creating Chat Rooms Using SocketIO
+- Real-time Video chat
+- Implementing Personal Messages
+- New Participant Notification
+- Notification when chat participant leaves the chat room
 
 - Enter Room through name
 
